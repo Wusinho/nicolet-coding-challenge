@@ -2,7 +2,7 @@
   <%= f.email_field :email, placeholder: 'Email' %>
     <% Subscriber::PREFERENCES.each do |key| %>
       <%= f.check_box :preferences, { multiple: true}, key, nil %>
-      <%= f.label key%>
+      <%= f.label key %>
     <% end %>
-  <%= f.submit %>
+  <%= f.submit class:"btn btn-primary" %>
 <% end %>
