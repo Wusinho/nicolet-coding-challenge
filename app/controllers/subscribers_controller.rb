@@ -5,6 +5,7 @@ class SubscribersController < ApplicationController
   end
 
   def create
+    return other_mail if @subscriber
     @sub = Subscriber.new(subscriber_params)
     return other_mail if EmailValidationServices.validate(@sub.email) < 0.70
     if @sub.save
