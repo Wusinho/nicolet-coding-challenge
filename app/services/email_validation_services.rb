@@ -15,7 +15,7 @@ class EmailValidationServices
       reponseJson = JSON.parse(response.body)
       reponseJson['quality_score'].to_f
   rescue StandardError => error
-      error.message
+      return 0
   end
 
 end
