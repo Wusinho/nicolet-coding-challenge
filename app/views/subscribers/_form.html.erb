@@ -4,7 +4,7 @@
   <p>Monthly digest of whats new and exciting from us.</p>
   <%= form_for @subscriber do |f| %>
     <%= f.email_field :email, placeholder: 'Email', class:'w-100' %>
-    <div class="form-inputs d-flex justify-content-between align-items-center">
+    <div class="form-inputs d-flex justify-content-between align-items-center my-2">
       <% Subscriber::PREFERENCES.each do |key| %>
         <%= f.label key %>
         <%= f.check_box :preferences, { multiple: true}, key, nil %>
