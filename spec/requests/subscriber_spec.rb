@@ -15,18 +15,5 @@ RSpec.describe 'Subscriber', type: :request do
       expect(response).to have_http_status(:found)
     end
 
-    it "should not create a subscription" do
-      req_payload = {
-        subscriber: {
-          email: "",
-        }
-      }
-      # POST HTTP
-      post "/subscribers", params: req_payload
-      payload = JSON.parse(response.body)
-      expect(response).to have_http_status(:no_content)
-    end
-
-
   end
 end
