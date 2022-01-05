@@ -8,7 +8,7 @@ class SubscribersController < ApplicationController
     @sub = Subscriber.new(subscriber_params)
     return other_mail if EmailValidationServices.validate(@sub.email) < 0.70
     if @sub.save
-      UserMailer.with(subscriber: @sub).welcome_email.deliver_later
+      # UserMailer.with(subscriber: @sub).welcome_email.deliver_later
       cookies[:saved_lead] = true
       redirect_to root_path, notice: 'Saved Successfully!'
     else
@@ -27,6 +27,6 @@ class SubscribersController < ApplicationController
   private
 
   def subscriber_params
-    params.require(:subscriber).permit(:email)
+    params.require(:subscriber).permit(:email, preferences: [] )
   end
 end
