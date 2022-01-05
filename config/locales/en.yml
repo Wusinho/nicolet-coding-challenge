@@ -30,14 +30,4 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  activerecord:
-    attributes:
-      subscriber:
-        email: "E-mail address"
-        preferences: "Not empty"
-    errors:
-      models:
-        subscriber:
-          attributes:
-            preferences:
-              blank: "is required"
+  hello: "Hello world"

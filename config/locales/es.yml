@@ -1,0 +1,5 @@
+es:
+  subscriber:
+    email: "Correo electronico"
+    placeholder: "tu@correo.com"
+    submit: "Suscribirse"

@@ -3,14 +3,17 @@
   <h5>Subscribe to our newsletter</h5>
   <p>Monthly digest of whats new and exciting from us.</p>
   <%= form_for @subscriber do |f| %>
-    <%= f.email_field :email, placeholder: 'Email', class:'w-100' %>
+    <div class="form-inputs">
+      <%= f.label t('subscriber.email') %>
+      <%= f.email_field :email, placeholder: t('subscriber.placeholder') , class:'w-100' %>
+    </div>
     <div class="form-inputs d-flex justify-content-between align-items-center my-2">
       <% Subscriber::PREFERENCES.each do |key| %>
         <%= f.label key %>
         <%= f.check_box :preferences, { multiple: true}, key, nil %>
       <% end %>
     </div>
-    <%= f.submit class:"btn btn-primary" %>
+    <%= f.submit t('subscriber.submit'), class:"btn btn-primary"%>
   <% end %>
 
 </div>
