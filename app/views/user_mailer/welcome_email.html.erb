@@ -6,7 +6,7 @@
   <body>
     <h1>Welcome <%= @user.email %></h1>
     <p>
-      You heard from us using <%= @user.preferences%>
+      You heard from us using <%= @user.preferences.to_sentence %>
     </p>
     <p>
       You have successfully subscribed to micolet!
