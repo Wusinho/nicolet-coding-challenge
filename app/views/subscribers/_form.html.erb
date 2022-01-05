@@ -1,8 +1,10 @@
 <%= form_for @subscriber do |f| %>
   <%= f.email_field :email, placeholder: 'Email' %>
+  <div class="form-inputs">
     <% Subscriber::PREFERENCES.each do |key| %>
-      <%= f.check_box :preferences, { multiple: true}, key, nil %>
       <%= f.label key %>
+      <%= f.check_box :preferences, { multiple: true}, key, nil %>
     <% end %>
+  </div>
   <%= f.submit class:"btn btn-primary" %>
 <% end %>
