@@ -1,8 +1,5 @@
 class SubscribersController < ApplicationController
   before_action :set_subscribe, only: [:create]
-  def index
-    @subscriber = Subscriber.new
-  end
 
   def create
     return other_mail if @subscriber
