@@ -13,8 +13,6 @@ class EmailValidationServices
       
       response = http.request(request)
       reponseJson = JSON.parse(response.body)
-      puts '----------------------'
-      reponseJson['quality_score'].to_f
       reponseJson['quality_score'].to_f >= 0.7
   rescue StandardError => error
       false

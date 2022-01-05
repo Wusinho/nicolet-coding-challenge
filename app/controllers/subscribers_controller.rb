@@ -1,5 +1,5 @@
 class SubscribersController < ApplicationController
-  before_action :set_subscribe, only: [:create]
+  before_action :set_subscribe
 
   def create
 
@@ -19,9 +19,13 @@ class SubscribersController < ApplicationController
     redirect_to root_path, notice: 'Please Provide another mail'
   end
 
+  def duplicated_mail
+    redirect_to root_path, notice: 'Please Provide another mail'
+  end
+
   def set_subscribe
     @subscriber = Subscriber.find_by(email: params[:email])
-    return other_mail if @subscriber
+    return duplicated_mail if @subscriber
   end
 
   private
