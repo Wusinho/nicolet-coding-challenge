@@ -2,6 +2,9 @@
 <div class="d-flex flex-column justify-content-start gap-2">
   <h5>Subscribe to our newsletter</h5>
   <p>Monthly digest of whats new and exciting from us.</p>
+     <% if notice %>
+      <%= notice %>
+    <% end %>
   <%= form_for @subscriber do |f| %>
     <div class="form-inputs">
       <%= f.label t('subscriber.email') %>
