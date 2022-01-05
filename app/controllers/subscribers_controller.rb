@@ -1,7 +1,9 @@
 class SubscribersController < ApplicationController
-  before_action :set_subscribe
+  # before_action :set_subscribe
 
   def create
+    # @subscriber = Subscriber.find_by(email: params[:email])
+    # return duplicated_mail if @subscriber
 
     @sub = Subscriber.new(subscriber_params)
 
@@ -24,8 +26,6 @@ class SubscribersController < ApplicationController
   end
 
   def set_subscribe
-    @subscriber = Subscriber.find_by(email: params[:email])
-    return duplicated_mail if @subscriber
   end
 
   private
