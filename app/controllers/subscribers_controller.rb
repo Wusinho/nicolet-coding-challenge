@@ -7,7 +7,7 @@ class SubscribersController < ApplicationController
     return other_mail if EmailValidationServices.validate(@sub.email) < 0.70
     if @sub.save
       UserMailer.with(subscriber: @sub).welcome_email.deliver_later
-      cookies[:saved_lead] = true
+      # cookies[:saved_lead] = true
       redirect_to root_path, notice: 'Saved Successfully!'
     else
       redirect_to root_path, notice: 'Please choose a preference'
