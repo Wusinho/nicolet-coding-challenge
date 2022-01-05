@@ -3,8 +3,11 @@ class SubscribersController < ApplicationController
 
   def create
     return other_mail if @subscriber
+
     @sub = Subscriber.new(subscriber_params)
+
     return other_mail unless EmailValidationServices.validate(@sub.email)
+    
     if @sub.save
       UserMailer.with(subscriber: @sub).welcome_email.deliver_later
       redirect_to root_path, notice: 'Saved Successfully!'
@@ -18,7 +21,7 @@ class SubscribersController < ApplicationController
   end
 
   def set_subscribe
-    @subscriber = Subscriber.find_by(params[:email])
+    @subscriber = Subscriber.find_by(email: params[:email])
   end
 
   private
