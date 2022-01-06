@@ -3,7 +3,20 @@
   <h5>Subscribe to our newsletter</h5>
   <p>Monthly digest of whats new and exciting from us.</p>
  
-  <%= form_for @subscriber do |f| %>
+<%= form_with(model: subscriber) do |f| %>
+  <% if subscriber.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subscriber.errors.count, "error") %> prohibited this subscriber from being saved:</h2>
+
+      <ul>
+        <% subscriber.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
     <div class="form-inputs">
       <%= f.label t('subscriber.email') %>
       <%= f.email_field :email, placeholder: t('subscriber.placeholder') , class:'w-100' %>
