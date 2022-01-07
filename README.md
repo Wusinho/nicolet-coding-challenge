@@ -23,9 +23,10 @@ For the development of the project, the following tools were used:
 - Rails v 2.7.2
 - Bootstrap v 5.1
 
-The purpose of the excersice is to build a simple landing page with a functional newsletter submission. Postgresql was used mainly to use the array functionality to save the subscriber's preference.
+The purpose of the exercise is to build a simple landing page with a functional newsletter submission. Postgresql was used mainly to use the array functionality to save the subscriber's preference.
 
-The project has a simple landing page with a functional newsletter subscription.
+The project has a landing page with a functional newsletter subscription with a response if the email passes the verification.
+
 ![image](./app/assets/images/screenshot.png)
 
 The user can have 3 different kind of error warnings:
@@ -34,7 +35,7 @@ The user can have 3 different kind of error warnings:
 
   ![image](./app/assets/images/duplicated.png)
 
-- Not choosing a preference
+- Not choosing at least one preference
 
   ![image](./app/assets/images/preference.png)
 
@@ -61,15 +62,19 @@ The user can have 3 different kind of error warnings:
 ## Checking the delivery system
 
 - On terminal: $ `gem install mailcatcher`
-- type $ `mailcather`
+- Type $ `mailcather`
 
   ![image](./app/assets/images/mailcatcher.png)
 
-- open the browser and type : `http://127.0.0.1:1080` on search bar
-- open the landing page at `http://localhost:3000/`
-- create a subscription with a valid email
+- Open the browser and type : `http://127.0.0.1:1080` on search bar
+- Open the landing page at `http://localhost:3000/`
+- Create a subscription with a valid email
 
   ![image](./app/assets/images/message.png)
+
+## Tests
+
+![image](./app/assets/images/rspec.png)
 
 ## Author
 
