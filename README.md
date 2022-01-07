@@ -8,6 +8,14 @@
 - The user may select one or more preferences, but they must select at least one of them.
 - Once the user has been registered successfully, an email will be sent confirming their subscription.
 
+Extra Ball 1 (Optional):
+
+- Even if the email has a valid format, that does not mean that it is an existing email. It could be that the domain does not exist, or it is not configured to receive mail. To prevent submitting this type of emails, we will only accept those that obtain a score greater than 0.7 when looking up in this API:
+
+Extra Ball 2 (Optional):
+
+- The landing page will be used in several countries, therefore it should be prepared to adapt it to different languages. This is what we know in software development as internationalization (i18n).
+
 # Description of the Project
 
 For the development of the project, the following tools were used:
@@ -17,36 +25,22 @@ For the development of the project, the following tools were used:
 
 The purpose of the excersice is to build a simple landing page with a functional newsletter submission. Postgresql was used mainly to use the array functionality to save the subscriber's preference.
 
+The project has a simple landing page with a functional newsletter subscription.
 ![image](./app/assets/images/screenshot.png)
 
-- The homepage displays all the products from the API.
+The user can have 3 different kind of error warnings:
 
-![image](./src/assets/Home.png)
+- Duplicated email
 
-If there's an error of somekind a message will appear.
+  ![image](./app/assets/images/duplicated.png)
 
-![image](./src/assets/Error_message.png)
+- Not choosing a preference
 
-The homepage displays all products with the following details: name, price, discount, and the sale price.
+  ![image](./app/assets/images/preference.png)
 
-The customer can browse through all the products that might be of interest, then add them to the cart. A small counter will keep track every time a new item is selected. Once the customer has finished, it is possible to check all the items that were selected, if needed it is possible to add more items, remove them or delete the whole shopping cart.
+- Invalid email ( Extra ball 1)
 
-- Add or Remove items from the Cart List.
-
-  ![image](./src/assets/Cart.png)
-
-If the customer needs a more in-depth search, there is a search tab at the top of the navbar. From this part of the webpage is possible to add items to the shopping cart.
-
-Every time there's a new search a request is sent to the '/search' endpoint through redux middleware to the API. If there's a 200 response, the data will be stored in redux and then displayed.
-
-- Search in the database by name, price, category and/or discount.
-
-  ![image](./src/assets/Search.png)
-
-[Netlify-Deployment](https://competent-mcnulty-9b9b65.netlify.app/)
-It may take some time for the page to load since Heroku also needs time to load the back-end.
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/27052ef2-c6a3-4b01-9a4d-f11438f88ff4/deploy-status)](https://app.netlify.com/sites/competent-mcnulty-9b9b65/deploys)
+  ![image](./app/assets/images/valid_email.png)
 
 ### **Endpoints of API**
 
