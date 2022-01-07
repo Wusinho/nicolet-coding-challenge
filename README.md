@@ -76,6 +76,12 @@ The user can have 3 different kind of error warnings:
 
 ![image](./app/assets/images/rspec.png)
 
+## Extra Ball 2
+
+- I18n was implemented to the subscription (`./config/locales/en.yml`)
+
+![image](./app/assets/images/I18n.png)
+
 ## Author
 
 👤 **Heber Lazo**
