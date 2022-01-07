@@ -54,15 +54,13 @@ The user can have 3 different kind of error warnings:
 - Open your terminal and cd where you want to store the project
 - Run the following command - `git clone https://github.com/Wusinho/nicolet-coding-challenge`
 - Cd into the created directory
-- Run `bundle install`
-- In terminal type $ `rails db:create`
-- In terminal type $ `rails db:migrate`
-- In terminal type $ `rails server`
+- Run $ `bundle install`
+- On terminal type $ `rails db:create && rails db:migrate`
+- On terminal type $ `rails server`
 
 ## Checking the delivery system
 
-- On terminal:
-  $ `gem install mailcatcher`
+- On terminal: $ `gem install mailcatcher`
 - type $ `mailcather`
 
   ![image](./app/assets/images/mailcatcher.png)
